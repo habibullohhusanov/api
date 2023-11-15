@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return Category::all();
+        return Category::with('image')->get();
     }
 
     public function create()
@@ -31,7 +31,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return $category;
+        return $category->with('image')->first();
     }
 
     /**

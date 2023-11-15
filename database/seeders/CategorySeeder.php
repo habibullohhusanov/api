@@ -18,24 +18,28 @@ class CategorySeeder extends Seeder
                 "en" => "chair",
                 "uz" => "stul",
             ],
+            "image_id" => 1,
         ]);
         Category::create([
             "name" => [
                 "en" => "bed",
                 "uz" => "divan",
             ],
+            "image_id" => 1,
         ]);
         Category::create([
             "name" => [
                 "en" => "table",
                 "uz" => "sto'l",
             ],
+            "image_id" => 1,
         ]);
         Category::create([
             "name" => [
                 "en" => "arm chair",
                 "uz" => "yumshoq o'rindiq",
             ],
+            "image_id" => 1,
         ]);
     }
 }

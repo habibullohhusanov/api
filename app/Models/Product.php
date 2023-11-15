@@ -21,4 +21,12 @@ class Product extends Model
     {
         return $this->hasMany(Order::class);
     }
+    public function stock()
+    {
+        return $this->hasMany(Stock::class);
+    }
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
 }

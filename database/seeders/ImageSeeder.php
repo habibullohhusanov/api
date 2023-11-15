@@ -14,7 +14,7 @@ class ImageSeeder extends Seeder
     public function run(): void
     {
         Image::create([
-            "image"=> "123123123",
+            "image" => "123123123",
         ]);
     }
 }
