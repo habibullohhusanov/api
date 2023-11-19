@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        return Product::with(['stock', 'category', 'image'])->find($id);
+        return new ProductResource(Product::find($id));
     }
 
     public function edit(Product $product)

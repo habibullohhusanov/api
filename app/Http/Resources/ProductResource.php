@@ -18,8 +18,8 @@ class ProductResource extends JsonResource
             "id" => $this->id,
             "name" => $this->getTranslations("name"),
             "price" => $this->price,
-            "category" => new CategoryResource($this->category),
-            "stock" => StockResource::collection($this->stock),
+            "category" => new CategoryRecource($this->category),
+            "stock" => StockRecource::collection($this->stock),
             "count" => $this->count,
         ];
     }
