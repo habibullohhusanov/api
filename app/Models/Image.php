@@ -13,7 +13,7 @@ class Image extends Model
     ];
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasCast(User::class);
     }
     public function product()
     {

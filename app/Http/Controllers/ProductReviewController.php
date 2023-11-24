@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreReviewRequest;
+use App\Http\Resources\ReviewResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,14 @@ class ProductReviewController extends Controller
         $this->middleware("auth:sanctum");
     }
     public function index(Product $product)
+    {
+        return response([
+            "avg" => $product->reviews()->avg("raiting"),
+            "count" => $product->reviews()->count(),
+            "reviews" => ReviewResource::collection($product->reviews()->paginate(2)),
+        ]);
+    }
+    public function show(Product $product)
     {
         return $product->reviews;
     }
@@ -28,7 +37,7 @@ class ProductReviewController extends Controller
             "body" => $body??null,
         ]);
         return response()->json([
-            "status"=> true,
+            "succes"=> true,
         ]);
     }
 }

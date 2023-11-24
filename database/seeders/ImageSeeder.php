@@ -16,5 +16,8 @@ class ImageSeeder extends Seeder
         Image::create([
             "image" => "123123123",
         ]);
+        Image::create([
+            "image" => "gjhsdgj",
+        ]);
     }
 }

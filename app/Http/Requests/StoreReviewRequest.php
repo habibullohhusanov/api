@@ -22,7 +22,7 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "raiting" => ["required",],
+            "raiting" => ["required", "numeric"],
             "body" => ["max:500",],
         ];
     }
