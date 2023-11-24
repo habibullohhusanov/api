@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\FavouriteController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductReviewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +33,5 @@ Route::apiResources([
     'products' => ProductController::class,
     'categories.products' => CategoryProductController::class,
     'favourites' => FavouriteController::class,
+    'product.review' => ProductReviewController::class,
 ]);
