@@ -18,28 +18,18 @@ class FavouriteController extends Controller
     {
         if (!auth()->user()->hasFavourites($request->product_id)) {
             auth()->user()->favourites()->attach($request->product_id);
-            return response()->json([
-                "succes" => true,
-            ]);
+            return $this->succes();
         } else {
-            return response()->json([
-                "succes"=> false,
-                "message" => "Already exsist"
-            ]);
+            return $this->error("Already exsist");
         }
     }
     public function destroy($id)
     {
         if (auth()->user()->hasFavourites($id)) {
             auth()->user()->favourites()->detach($id);
-            return response()->json([
-                "succes" => true,
-            ]);
+            return $this->succes();
         } else {
-            return response()->json([
-                "succes"=> false,
-                "message" => "Not found"
-            ]);
+            return $this->error("ANot found");
         }
     }
 }

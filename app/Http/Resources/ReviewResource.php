@@ -16,11 +16,11 @@ class ReviewResource extends JsonResource
     {
         return [
             "id"=> $this->id,
+            "product" => $this->product,
+            "user" => $this->user,
             "raiting"=> $this->raiting,
             "body" => $this->body,
-            "product_id" => $this->product_id,
-            "user" => $this->user,
-            "created_at" => $this->created_at,
+            "update_at" => $this->update_at,
         ];
     }
 }
