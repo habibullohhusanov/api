@@ -14,6 +14,10 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
+        $order = [
+            Permission::create(['name' => 'order:viewAny']),
+            Permission::create(['name' => 'order:view']),
+        ];
         $role = Role::create(['name' => 'admin']);
         $role = Role::create(['name' => 'shop assistant']);
         $permissions = [
@@ -22,20 +26,21 @@ class RolePermissionSeeder extends Seeder
             Permission::create(['name' => 'product:delete']),
         ];
         $role->syncPermissions($permissions);
+        $role->syncPermissions($order);
         $role = Role::create(['name' => 'helper']);
         $permissions = [
+            Permission::create(['name' => 'user:viewAny']),
             Permission::create(['name' => 'user:view']),
         ];
         $role->syncPermissions($permissions);
         $role = Role::create(['name' => 'customer']);
         $permissions = [
-            Permission::create(['name' => 'order:viewAny']),
-            Permission::create(['name' => 'order:view']),
             Permission::create(['name' => 'order:create']),
             Permission::create(['name' => 'order:delete']),
             Permission::create(['name' => 'review:create']),
             Permission::create(['name' => 'review:delete']),
         ];
         $role->syncPermissions($permissions);
+        $role->syncPermissions($order);
     }
 }

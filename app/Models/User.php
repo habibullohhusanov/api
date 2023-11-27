@@ -48,6 +48,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+    public function hasOrders($id)
+    {
+        return $this->orders()->where('id', $id)->exists();
+    }
     public function reviews()
     {
         return $this->hasMany(Review::class);

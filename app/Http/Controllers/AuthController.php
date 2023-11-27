@@ -19,7 +19,7 @@ class AuthController extends Controller
                 'email' => ['The provided credentials are incorrect.'],
             ]);
         }
-        return $this->succes(null, ["token" => $user->createToken($request->email)->plainTextToken]);
+        return $this->succes(["token" => $user->createToken($request->email)->plainTextToken]);
     }
     public function register(RegisterRequest $request)
     {

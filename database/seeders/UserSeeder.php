@@ -41,5 +41,12 @@ class UserSeeder extends Seeder
             "password" => Hash::make("2407"),
         ]);
         $user->assignRole('Customer');
+        $user = User::create([
+            "name" => "bbn",
+            "email" => "bbn@gmail.com",
+            "image_id" => 1,
+            "password" => Hash::make("2407"),
+        ]);
+        $user->assignRole('Customer');
     }
 }

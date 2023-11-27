@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return ProductResource::collection(Product::all());
+        return ProductResource::collection(Product::paginate(10));
     }
 
     public function store(StoreProductRequest $request)
@@ -28,11 +28,6 @@ class ProductController extends Controller
             "category"=> $category,
         ]);
         //return new ProductResource(Product::find($id));
-    }
-
-    public function edit(Product $product)
-    {
-        //
     }
 
     public function update(UpdateProductRequest $request, Product $product)
