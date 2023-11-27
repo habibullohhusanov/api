@@ -19,9 +19,15 @@ class ProductController extends Controller
         //
     }
 
-    public function show($id)
+    public function show(Product $product)
     {
-        return new ProductResource(Product::find($id));
+        $showProduct = new ProductResource($product);
+        $category = Product::where("category_id", $product->category_id)->paginate(2);
+        return $this->response([
+            "product" => $showProduct,
+            "category"=> $category,
+        ]);
+        //return new ProductResource(Product::find($id));
     }
 
     public function edit(Product $product)

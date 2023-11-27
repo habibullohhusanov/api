@@ -9,7 +9,13 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function succes(string $message = null, array $data = null)
+    public function response($data)
+    {
+        return response()->json([
+            "data"=> $data,
+        ]);
+    }
+    public function succes(string $message = null, $data = null)
     {
         return response()->json([
             "succes" => true,
@@ -17,7 +23,7 @@ class Controller extends BaseController
             "data"=> $data,
         ]);
     }
-    public function error(string $message = null, array $data = null)
+    public function error(string $message = null, $data = null)
     {
         return response()->json([
             "succes" => false,
