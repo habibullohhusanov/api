@@ -16,35 +16,30 @@ class UserSeeder extends Seeder
         $user = User::create([
             "name" => "Admin",
             "email" => "admin@gmail.com",
-            "image_id" => 1,
             "password" => Hash::make("2407"),
         ]);
         $user->assignRole('admin');
         $user = User::create([
             "name" => "Shop assistant",
             "email" => "shop_assistant@gmail.com",
-            "image_id" => 1,
             "password" => Hash::make("2407"),
         ]);
         $user->assignRole('shop assistant');
         $user = User::create([
             "name" => "Helper",
             "email" => "helper@gmail.com",
-            "image_id" => 1,
             "password" => Hash::make("2407"),
         ]);
         $user->assignRole('helper');
         $user = User::create([
             "name" => "Customer",
             "email" => "customer@gmail.com",
-            "image_id" => 1,
             "password" => Hash::make("2407"),
         ]);
         $user->assignRole('Customer');
         $user = User::create([
             "name" => "bbn",
             "email" => "bbn@gmail.com",
-            "image_id" => 1,
             "password" => Hash::make("2407"),
         ]);
         $user->assignRole('Customer');

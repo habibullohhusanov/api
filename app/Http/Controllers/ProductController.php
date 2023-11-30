@@ -6,9 +6,14 @@ use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Resources\ProductResource;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth:sanctum");
+    }
     public function index()
     {
         return ProductResource::collection(Product::paginate(10));
@@ -16,7 +21,14 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        //
+        // dd($request);
+        $product = Product::create([
+            "category_id" => $request->category_id,
+            "name" => $request->name,
+            "price" => $request->price,
+            "count" => $request->count,
+        ]);
+        return new ProductResource($product);
     }
 
     public function show(Product $product)
@@ -25,9 +37,8 @@ class ProductController extends Controller
         $category = Product::where("category_id", $product->category_id)->paginate(2);
         return $this->response([
             "product" => $showProduct,
-            "category"=> $category,
+            "category" => $category,
         ]);
-        //return new ProductResource(Product::find($id));
     }
 
     public function update(UpdateProductRequest $request, Product $product)
@@ -37,6 +48,11 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-        //
+        foreach ($product->images as $image) {
+            Storage::delete($image->path);
+            $image->delete();
+        }
+        $product->delete();
+        return $this->succes(message: "Product deleted");
     }
 }

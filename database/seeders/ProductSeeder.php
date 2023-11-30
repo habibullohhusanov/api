@@ -19,7 +19,6 @@ class ProductSeeder extends Seeder
                 "en" => "chair",
                 "uz" => "stul",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -29,7 +28,6 @@ class ProductSeeder extends Seeder
                 "en" => "bed",
                 "uz" => "divan",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -39,7 +37,6 @@ class ProductSeeder extends Seeder
                 "en" => "table",
                 "uz" => "sto'l",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -49,7 +46,6 @@ class ProductSeeder extends Seeder
                 "en" => "arm chair",
                 "uz" => "yumshoq o'rindiq",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -59,7 +55,6 @@ class ProductSeeder extends Seeder
                 "en" => "chair",
                 "uz" => "stul",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -69,7 +64,6 @@ class ProductSeeder extends Seeder
                 "en" => "bed",
                 "uz" => "divan",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -79,7 +73,6 @@ class ProductSeeder extends Seeder
                 "en" => "table",
                 "uz" => "sto'l",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -89,7 +82,6 @@ class ProductSeeder extends Seeder
                 "en" => "arm chair",
                 "uz" => "yumshoq o'rindiq",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -99,7 +91,6 @@ class ProductSeeder extends Seeder
                 "en" => "chair",
                 "uz" => "stul",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -109,7 +100,6 @@ class ProductSeeder extends Seeder
                 "en" => "bed",
                 "uz" => "divan",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -119,7 +109,6 @@ class ProductSeeder extends Seeder
                 "en" => "table",
                 "uz" => "sto'l",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -129,7 +118,6 @@ class ProductSeeder extends Seeder
                 "en" => "arm chair",
                 "uz" => "yumshoq o'rindiq",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -139,7 +127,6 @@ class ProductSeeder extends Seeder
                 "en" => "chair",
                 "uz" => "stul",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -149,7 +136,6 @@ class ProductSeeder extends Seeder
                 "en" => "bed",
                 "uz" => "divan",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -159,7 +145,6 @@ class ProductSeeder extends Seeder
                 "en" => "table",
                 "uz" => "sto'l",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);
@@ -169,7 +154,6 @@ class ProductSeeder extends Seeder
                 "en" => "arm chair",
                 "uz" => "yumshoq o'rindiq",
             ],
-            "image_id" => 1,
             "price" => 55,
             "count" => 15,
         ]);

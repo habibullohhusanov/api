@@ -17,6 +17,7 @@ class ProductResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->getTranslations("name"),
+            "image" => ImageResource::collection($this->images),
             "price" => $this->price,
             "category" => new CategoryRecource($this->category),
             "stock" => StockRecource::collection($this->stock),

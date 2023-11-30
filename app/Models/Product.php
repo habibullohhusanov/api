@@ -25,9 +25,9 @@ class Product extends Model
     {
         return $this->hasMany(Stock::class);
     }
-    public function image()
+    public function images()
     {
-        return $this->belongsTo(Image::class);
+        return $this->morphMany(Image::class, "imageable");
     }
     public function user()
     {
