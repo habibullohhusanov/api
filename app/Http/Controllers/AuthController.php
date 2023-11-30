@@ -10,6 +10,10 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware("auth")->except("register");
+    }
     public function login(LoginRequest $request)
     {
         $user = User::where('email', $request->email)->first();
@@ -21,5 +25,17 @@ class AuthController extends Controller
     }
     public function register(RegisterRequest $request)
     {
+        $user = User::create([
+            "name" => $request->name,
+            "email"=> $request->email,
+            "password"=> Hash::make($request->password),
+        ]);
+        return $this->succes([
+            "token" => $user->createToken($request->email)->plainTextToken,
+        ]);
+    }
+    public function user()
+    {
+        return auth()->user()->name;
     }
 }
